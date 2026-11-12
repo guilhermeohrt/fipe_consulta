@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta FIPE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <span class="etiqueta">CONSULTA DE VEÍCULOS</span>
+      <h1>Quanto vale seu carro?</h1>
+      <p>Escolha a marca, o modelo e o ano para consultar o valor na Tabela FIPE.</p>
+    </header>
+ 
+    <section class="painel" aria-label="Formulário de consulta">
+      <form id="formConsulta">
+        <div class="campo">
+          <label for="marca">Marca</label>
+          <select id="marca" required disabled>
+            <option value="">Carregando marcas...</option>
+          </select>
+        </div>
+ 
+        <div class="campo">
+          <label for="modelo">Modelo</label>
+          <select id="modelo" required disabled>
+            <option value="">Primeiro, escolha uma marca</option>
+          </select>
+        </div>
+ 
+        <div class="campo">
+          <label for="ano">Ano / combustível</label>
+          <select id="ano" required disabled>
+            <option value="">Primeiro, escolha um modelo</option>
+          </select>
+        </div>
+ 
+        <button type="submit" id="btnConsultar" disabled>Consultar preço</button>
+      </form>
+ 
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+ 
+    <section id="resultado" class="resultado" hidden aria-live="polite">
+      <span class="etiqueta">RESULTADO DA CONSULTA</span>
+      <h2 id="nomeCarro"></h2>
+      <p class="texto-apoio">Valor médio na Tabela FIPE</p>
+      <p class="preco" id="precoCarro"></p>
+      <div class="detalhes">
+        <p><strong>Marca:</strong> <span id="detalheMarca"></span></p>
+        <p><strong>Ano:</strong> <span id="detalheAno"></span></p>
+        <p><strong>Combustível:</strong> <span id="detalheCombustivel"></span></p>
+        <p><strong>Código FIPE:</strong> <span id="detalheCodigo"></span></p>
+        <p><strong>Referência:</strong> <span id="detalheReferencia"></span></p>
+      </div>
+    </section>
+ 
+    <footer>Dados fornecidos pela <a href="https://brasilapi.com.br/" target="_blank" rel="noopener noreferrer">BrasilAPI</a>. Os preços são apenas uma referência de mercado.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
